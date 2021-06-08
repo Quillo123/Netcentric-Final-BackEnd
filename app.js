@@ -4,8 +4,15 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// for db
+var db = require('./database');
+
+
+
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var bookRouter = require('./routes/books');
+var authorRouter = require('./routes/authors');
+var booksAuthorRouter = require('./routes/books-authors');
 
 var app = express();
 
@@ -19,8 +26,16 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// To be able to use the API everywhere... there are better ways to handle this!
+app.use((request, response, next) => {
+  response.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/books', bookRouter);
+app.use('/api/authors', authorRouter)
+app.use('/api/books-authors', booksAuthorRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
