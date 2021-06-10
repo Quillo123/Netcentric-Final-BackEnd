@@ -7,16 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24273c83-facf-4953-ad0a-d2c094b6f3b8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/database.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/AuthorSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/BookSchema.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/authors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/books-authors.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes/books.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/books.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/books.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,13 +50,6 @@
       <recent name="C:\Development\Netcentric\Netcentric-Final" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -76,7 +61,8 @@
       <workItem from="1622669488777" duration="9949000" />
       <workItem from="1622770242890" duration="10838000" />
       <workItem from="1622951002703" duration="6467000" />
-      <workItem from="1623190129668" duration="2326000" />
+      <workItem from="1623190129668" duration="13647000" />
+      <workItem from="1623351344290" duration="985000" />
     </task>
     <servers />
   </component>

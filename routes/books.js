@@ -178,7 +178,7 @@ router.get('/:id', (request, response, next) => {
 });
 
 router.patch('/:id', (request, response, next) => {
-    BookSchema.findById({'_id': request.params.id }, (error, book) => {
+    BookSchema.findById({'_id': request.params.id }, async (error, book) => {
         if(error){
             response.send({'error': error});
         }
@@ -189,6 +189,32 @@ router.patch('/:id', (request, response, next) => {
             for(let field in request.body){
                 book[field] = request.body[field];
             }
+            let authors = [];
+            for(let i = 0; book['authors'][i] || request.body['authors[' + i + ']']; i++){
+                if(request.body['authors[' + i + ']']){
+                    if(!request.body['authors[' + i + ']']){
+                        console.log(book['author'][i]);
+                        authors.push(book['author'][i]);
+                    }
+                    else if(book['authors'][i] !== request.body['authors[' + i + ']']){
+                        if(request.body['authors[' + i + ']'] !== '0' && request.body['authors[' + i + ']']){
+                            try{
+                                await AuthorSchema.find({'_id': request.body['authors[' + i + ']']})
+                                    .then((author) =>{
+                                        if(author)
+                                            authors.push(request.body['authors[' + i + ']']);
+                                    });
+                            }
+                            catch (error){
+                                response.send({'error': error});
+                                return;
+                            }
+
+                        }
+                    }
+                }
+            }
+            book['authors'] = authors;
             book.save((error, book) => {
                 if(error){
                     response.status(500).send(error);
