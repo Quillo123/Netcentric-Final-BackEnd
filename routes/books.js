@@ -194,7 +194,7 @@ router.get('/:id', (request, response, next) => {
             });
     }
 
-    async function SendGetResponse(books, response){
+    async function SendGetResponse(book, response){
         let b = {
             _id: book['_id'],
             title: book['title'],
