@@ -43,6 +43,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RecentsManager">
@@ -62,7 +63,9 @@
       <workItem from="1622770242890" duration="10838000" />
       <workItem from="1622951002703" duration="6467000" />
       <workItem from="1623190129668" duration="13647000" />
-      <workItem from="1623351344290" duration="985000" />
+      <workItem from="1623351344290" duration="1254000" />
+      <workItem from="1623352701862" duration="88000" />
+      <workItem from="1623448027692" duration="1451000" />
     </task>
     <servers />
   </component>

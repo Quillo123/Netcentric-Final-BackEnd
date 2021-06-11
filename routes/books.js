@@ -134,7 +134,7 @@ router.get('/', (request, response, next) => {
                     response.send({'error': error});
                 }
                 else{
-                    response.send(books);
+                    SendGetResponse(books, response);
                 }
             });
     }
@@ -144,9 +144,38 @@ router.get('/', (request, response, next) => {
                 if (error) {
                     response.send({'error': error});
                 } else {
-                    response.send(books);
+                    SendGetResponse(books, response);
                 }
             });
+    }
+
+    async function SendGetResponse(books, response){
+        let resBooks = [];
+        for(let book of books){
+            let b = {
+                _id: book['_id'],
+                title: book['title'],
+                description: book['description'],
+                year: book['year'],
+                authors: [],
+                hardCover: book['hardCover'],
+                price: book['price']
+            }
+            for(let author of book['authors']){
+                try{
+                   await AuthorSchema.findById({'_id': author })
+                        .then((author) => {
+                            b['authors'].push(author);
+                        });
+                }
+                catch (error){
+                    response.send({'error': error});
+
+                }
+            }
+            resBooks.push(b);
+        }
+        response.send(resBooks);
     }
 });
 
@@ -165,15 +194,29 @@ router.get('/:id', (request, response, next) => {
             });
     }
 
-    function SendGetResponse(books, response){
-        AuthorSchema.find()
-            .exec((error, author) => {
-                if (error) {
-                    response.send({'error': error});
-                } else {
-                    response.send(JSON.stringify(books) + JSON.stringify(author));
-                }
-            });
+    async function SendGetResponse(books, response){
+        let b = {
+            _id: book['_id'],
+            title: book['title'],
+            description: book['description'],
+            year: book['year'],
+            authors: [],
+            hardCover: book['hardCover'],
+            price: book['price']
+        }
+        for(let author of book['authors']){
+            try{
+                await AuthorSchema.findById({'_id': author })
+                    .then((author) => {
+                        b['authors'].push(author);
+                    });
+            }
+            catch (error){
+                response.send({'error': error});
+
+            }
+        }
+        response.send(b);
     }
 });
 
