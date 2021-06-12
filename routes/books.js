@@ -221,7 +221,7 @@ router.get('/:id', (request, response, next) => {
 });
 
 router.patch('/:id', (request, response, next) => {
-    BookSchema.findById({'_id': request.body.id }, async (error, book) => {
+    BookSchema.findById({'_id': request.params.id }, async (error, book) => {
         if(error){
             response.send({'error': error});
         }
