@@ -181,7 +181,7 @@ router.get('/', (request, response, next) => {
 
 router.get('/:id', (request, response, next) => {
     if(request.params.id){
-        BookSchema.findById({'_id': request.params.id }, (error, book) => {
+        BookSchema.findById({'_id': request.body.id }, (error, book) => {
                 if(error){
                     response.send({'error': error});
                 }
