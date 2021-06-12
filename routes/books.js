@@ -126,7 +126,7 @@ async function PostAuthor(authorName, authorNat, response){
 }
 
 router.get('/', (request, response, next) => {
-    let title = request.body['title'];
+    let title = request.body.title;
     if(title){
         BookSchema.find({'title': title})
             .exec((error, books) =>{
