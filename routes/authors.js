@@ -22,7 +22,7 @@ router.post('/', (request, response, next) => {
                 } else {
                     if (author.length === 0) {
                         let newAuthor = new AuthorSchema({
-                            name: request.name,
+                            name: authorJSON.name,
                             nationality: authorJSON.nationality || "unknown"
                         });
 
